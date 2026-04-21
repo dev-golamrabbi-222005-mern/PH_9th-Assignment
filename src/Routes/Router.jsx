@@ -14,6 +14,7 @@ import PrivateRoute from '../Contexts/PrivateRoute';
 import PasswordRest from '../Pages/PasswordRest';
 import UpdateUser from '../Pages/UpdateUser';
 import MyProfile from '../Pages/MyProfile';
+import AllGames from '../Pages/AllGames';
 
  const Router = createBrowserRouter([
    {
@@ -23,6 +24,10 @@ import MyProfile from '../Pages/MyProfile';
        {
          path: "",
          Component: Home,
+       },
+       {
+         path: "/allGames",
+         Component: AllGames,
        },
        {
          path: "/about",
@@ -46,23 +51,19 @@ import MyProfile from '../Pages/MyProfile';
        },
        {
          path: "/passwordRest",
-         Component: PasswordRest
+         Component: PasswordRest,
        },
        {
-        path: '/myProfile',
-        Component: MyProfile
+         path: "/myProfile",
+         Component: MyProfile,
        },
        {
-        path: '/updateProfile',
-        Component: UpdateUser
+         path: "/updateProfile",
+         Component: UpdateUser,
        },
        {
          path: "/aboutGame/:id",
-         element: (
-           <PrivateRoute>
-             <AboutGame></AboutGame>
-           </PrivateRoute>
-         ),
+         element: <AboutGame></AboutGame>,
        },
      ],
    },

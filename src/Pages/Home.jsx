@@ -5,11 +5,13 @@ import PopularGames from '../Components/PopularGames';
 
 const Home = () => {
     return (
-      <div className="w-full md:w-11/12 lg:w-10/12 mx-auto">
+      <div>
         <title>Gamehub - Home</title>
         <Banner></Banner>
-        <PopularGames></PopularGames>
-        <NewsLetter></NewsLetter>
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <PopularGames></PopularGames>
+          <NewsLetter></NewsLetter>
+        </div>
       </div>
     );
 };

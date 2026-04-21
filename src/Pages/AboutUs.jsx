@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <div className="bg-[#0A0F1C] text-gray-200 py-20 px-6 md:px-16 lg:px-28">
+    <div className="text-gray-200 py-6 md:py-10 max-w-7xl mx-auto px-4 md:px-6">
       <title>About US - Gamehub</title>
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -11,7 +11,7 @@ const AboutUs = () => {
         transition={{ duration: 0.8 }}
         className="text-center mb-14"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-3">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#64FFDA] mb-3">
           About Gamehub
         </h1>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -28,11 +28,11 @@ const AboutUs = () => {
         className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-20"
       >
         <div>
-          <h2 className="text-3xl font-semibold text-cyan-300 mb-4">
+          <h2 className="text-3xl font-semibold text-[#64FFDA] mb-4">
             Our Mission
           </h2>
           <p className="text-gray-400 leading-relaxed">
-            At <span className="text-cyan-400 font-semibold">Gamehub</span>, we
+            At <span className="text-[#64FFDA] font-semibold">Gamehub</span>, we
             believe that every developer deserves a platform to showcase their
             creativity. Our goal is to bridge the gap between talented
             developers and passionate gamers by creating an online library where
@@ -62,7 +62,7 @@ const AboutUs = () => {
         </motion.div>
 
         <div className="order-1 md:order-2">
-          <h2 className="text-3xl font-semibold text-cyan-300 mb-4">
+          <h2 className="text-3xl font-semibold text-[#64FFDA] mb-4">
             What We Do
           </h2>
           <p className="text-gray-400 leading-relaxed">
@@ -82,7 +82,7 @@ const AboutUs = () => {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl font-semibold text-cyan-300 mb-4">
+        <h2 className="text-3xl font-semibold text-[#64FFDA] mb-4">
           Our Vision
         </h2>
         <p className="text-gray-400 leading-relaxed mb-8">
@@ -93,7 +93,7 @@ const AboutUs = () => {
         </p>
         <motion.button
           whileHover={{ scale: 1.1 }}
-          className="bg-cyan-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors duration-300"
+          className="bg-[#64FFDA] hover:bg-secondary text-black font-semibold px-8 py-3 rounded-full hover:text-[#64FFDA] transition-colors duration-300"
         >
           Join the Community
         </motion.button>

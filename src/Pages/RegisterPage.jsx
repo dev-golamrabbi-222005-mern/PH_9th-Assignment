@@ -102,14 +102,19 @@ const RegisterPage = () => {
                 I agree to the{" "}
                 <Link
                   to="/terms"
-                  className="link text-[#ff5520] hover:text-secondary font-semibold"
+                  className="link text-[#64FFDA]/75 hover:text-secondary font-semibold"
                 >
                   Terms and Conditions
                 </Link>
               </label>
             </div>
-            {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
-            <button type="submit" className="btn bg-[#0A192F] mt-4">
+            {error && (
+              <p className="text-red-500 font-semibold mt-2">{error}</p>
+            )}
+            <button
+              type="submit"
+              className="btn bg-secondary hover:bg-secondary/60 mt-4"
+            >
               Register
             </button>
           </form>
@@ -117,7 +122,7 @@ const RegisterPage = () => {
             Already Have An Account?{" "}
             <Link
               to="/auth/login"
-              className="link link-hover text-[#ff5520] hover:text-secondary font-bold"
+              className="link link-hover text-[#64FFDA]/75 hover:text-primary font-bold"
             >
               Login{" "}
             </Link>

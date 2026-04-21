@@ -68,9 +68,9 @@ const LoginPage = () => {
                 name="password"
               />
               <div>
-                <Link to='/passwordRest'
-                  
-                  className="link link-hover text-primary"
+                <Link
+                  to="/passwordRest"
+                  className="link link-hover text-[#64FFDA]/75"
                 >
                   Forgot password?
                 </Link>
@@ -78,7 +78,10 @@ const LoginPage = () => {
               {error && (
                 <p className="text-red-500 font-semibold mt-1">{error}</p>
               )}
-              <button type="submit" className="btn bg-[#0A192F] mt-4">
+              <button
+                type="submit"
+                className="btn bg-secondary hover:bg-secondary/60 mt-4"
+              >
                 Login
               </button>
             </form>
@@ -86,7 +89,7 @@ const LoginPage = () => {
               Don't Have An Account?{" "}
               <Link
                 to="/auth/register"
-                className="link link-hover text-[#ff5520] hover:text-secondary font-bold"
+                className="link link-hover text-[#64FFDA]/75 font-bold"
               >
                 Register
               </Link>
@@ -95,7 +98,7 @@ const LoginPage = () => {
             </p>
             <button
               onClick={handleGoogleSignIn}
-              className="btn bg-accent text-black border-[#e5e5e5]"
+              className="btn bg-[#64FFDA]/75 text-black border-[#e5e5e5]"
             >
               <svg
                 aria-label="Google logo"

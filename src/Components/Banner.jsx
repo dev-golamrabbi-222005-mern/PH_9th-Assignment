@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -33,62 +33,66 @@ const slides = [
 ];
 
 const Banner = () => {
-    const [current, setCurrent] =useState(0);
-        useEffect(()=>{
-            const timer = setInterval(() => {
-                setCurrent((prev) => (prev + 1) % slides.length)
-            }, 3333);
-            return () => clearInterval(timer);
-        })
+  const [current, setCurrent] = useState(0);
 
-    return (
-      <div className="relative w-full h-[500px] overflow-hidden rounded-2xl shadow-lg mt-4 md:mt-7 lg:mt-11 mb-5 md:mb-11 lg:mb-22">
-        <AnimatePresence>
-          <motion.div
-            key={slides[current].id}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <img
-              src={slides[current].image}
-              alt={slides[current].title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-start p-10 text-white">
-              <h2 className="text-4xl font-bold mb-3">
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3333);
+    return () => clearInterval(timer);
+  }, []); // Added dependency array to prevent unnecessary re-renders
+
+  return (
+    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden shadow-lg">
+      <AnimatePresence>
+        <motion.div
+          key={slides[current].id}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <img
+            src={slides[current].image}
+            alt={slides[current].title}
+            className="w-full h-full object-cover"
+          />
+          {/* Centering classes applied below: flex flex-col justify-center */}
+          <div className="absolute inset-0 bg-black/50 p-10 text-white flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 w-full">
+              <h2 className="text-2xl md:text-4xl font-bold mb-3">
                 {slides[current].title}
               </h2>
-              <p className="max-w-xl text-lg mb-5">
+              <p className="max-w-xl md:text-lg mb-5">
                 {slides[current].description}
               </p>
               <a
                 href={slides[current].link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary hover:bg-yellow-600 px-5 py-2 rounded-full font-semibold transition"
+                className="bg-[#64FFDA] hover:bg-secondary text-black/80 px-5 py-2 rounded-full font-semibold transition inline-block w-fit"
               >
                 Explore Now
               </a>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === current ? "bg-primary scale-125" : "bg-gray-400"
-              }`}
-            />
-          ))}
-        </div>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrent(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === current ? "bg-[#64FFDA] scale-125" : "bg-gray-400"
+            }`}
+          />
+        ))}
       </div>
-    );
+    </div>
+  );
 };
 
 export default Banner;

@@ -1,20 +1,33 @@
-import React from 'react';
-
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaTwitter, FaLinkedinIn, FaHome, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import React from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaTwitter,
+  FaLinkedinIn,
+  FaHome,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-gray-300">
-      <div className="bg-[#202224]">
-        <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-5 md:pt-8 lg:pt-11">
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-white">ABOUT US</h3>
-            <p className="text-gray-400 mb-4 leading-relaxed">
-              An engaging online library for discovering and supporting game
-              developers. Users can browse indie games, see detailed
-              information, and install if you like them.
+    <footer className="bg-[#1a1c1e] text-gray-400 font-sans">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* About Section */}
+          <div className="space-y-6">
+            <h3 className="text-white text-sm font-bold tracking-widest uppercase border-l-4 border-[#64FFDA] pl-3">
+              About Us
+            </h3>
+            <p className="text-sm leading-relaxed">
+              An engaging online library for discovering and supporting indie
+              game developers. We bridge the gap between creators and players
+              through innovation and community.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-4">
               {[
                 FaFacebookF,
                 FaInstagram,
@@ -22,108 +35,109 @@ const Footer = () => {
                 FaTwitter,
                 FaLinkedinIn,
               ].map((Icon, i) => (
-                <a key={i} href="#" className="hover:text-red-500 transition">
-                  <Icon />
+                <a
+                  key={i}
+                  href="#"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#64FFDA] text-black hover:bg-secondary transition-all duration-300"
+                >
+                  <Icon size={14} />
                 </a>
               ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-white">CONTACT US</h3>
-            <p className="flex items-start gap-2 mb-2">
-              <FaHome className="mt-1 text-primary" /> Malek Spinning,
-              Shafipur-East, Kaliakoir, Gazipur
-            </p>
-            <p className="flex items-center gap-2 mb-1">
-              <FaPhoneAlt className="text-primary" /> (+12) 999 333333
-            </p>
-            <p className="flex items-center gap-2 mb-3">
-              <FaPhoneAlt className="text-primary" /> (+98) 222 444444
-            </p>
-            <p className="flex items-center gap-2">
-              <FaEnvelope className="text-primary" /> g.rabbi2005.333@gmail.com
-            </p>
-            <p className="flex items-center gap-2">
-              <FaEnvelope className="text-primary" /> g.rabbi2005.444@gmail.com
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-white">USEFUL LINKS</h3>
-            <ul className="space-y-2">
-              {["Home", "About Us", "Services", "News", "Portfolio"].map(
-                (link, i) => (
-                  <li key={i}>
-                    <a
-                      href="#"
-                      className="hover:text-orange-500 transition flex items-center gap-2"
-                    >
-                      <span className="text-primary">›</span> {link}
-                    </a>
-                  </li>
-                )
-              )}
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-white text-sm font-bold tracking-widest uppercase border-l-4 border-[#64FFDA] pl-3">
+              Useful Links
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {["Home", "About Us", "Services", "News"].map((link, i) => (
+                <li key={i}>
+                  <a
+                    href="#"
+                    className="hover:text-[#64FFDA] transition-colors duration-200 flex items-center group"
+                  >
+                    <span className="opacity-0 group-hover:opacity-100 transition-all mr-2 text-[#64FFDA]">
+                      →
+                    </span>
+                    {link}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-white">RECENT POST</h3>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-gray-800 text-center px-3 py-2 rounded">
-                <p className="text-white text-sm font-bold">30</p>
-                <p className="text-primary text-xs font-semibold">JULY 2023</p>
+          {/* Contact Section */}
+          <div className="space-y-6">
+            <h3 className="text-white text-sm font-bold tracking-widest uppercase border-l-4 border-[#64FFDA] pl-3">
+              Contact Us
+            </h3>
+            <div className="space-y-4 text-sm">
+              <div className="flex items-start gap-3">
+                <FaHome className="text-[#64FFDA] mt-1" />
+                <span>Savar-DOHS, Dhaka, Bangladesh</span>
               </div>
-              <div>
-                <p className="text-white font-semibold text-sm">
-                  WHERE WE’RE STANDING RIGHT NOW
-                </p>
-                <p className="text-xs text-gray-400">By Admin 👤159</p>
+              <div className="flex items-center gap-3">
+                <FaPhoneAlt className="text-[#64FFDA]" />
+                <span>+880 123 456 789</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <FaEnvelope className="text-[#64FFDA]" />
+                <span className="truncate">support@gamehub.com</span>
               </div>
             </div>
+          </div>
 
-            <div className="flex items-center gap-3">
-              <div className="bg-gray-800 text-center px-3 py-2 rounded">
-                <p className="text-white text-sm font-bold">22</p>
-                <p className="text-primary text-xs font-semibold">
-                  OCTOBER 2023
-                </p>
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">
-                  AND MAYBE KNOWING ISN’T THE POINT
-                </p>
-                <p className="text-xs text-gray-400">By Admin 👤357</p>
-              </div>
+          {/* Newsletter Section */}
+          <div className="space-y-6">
+            <h3 className="text-white text-sm font-bold tracking-widest uppercase border-l-4 border-[#64FFDA] pl-3">
+              Newsletter
+            </h3>
+            <p className="text-sm">
+              Subscribe to get the latest gaming news and updates.
+            </p>
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-4 focus:outline-none focus:border-[#64FFDA] text-white text-sm transition-all"
+              />
+              <button className="absolute right-2 top-1/2 -translate-y-1/2 text-[#64FFDA] hover:text-white transition-colors">
+                <FaPaperPlane />
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#111111] border-t border-gray-700 py-4 text-sm text-gray-400 flex flex-col-reverse md:flex-row items-center justify-center gap-5 lg:gap-22">
-        <h1 className="text-center">
-          © Copyright 2025. All rights reserved. Designed by{" "}
-          <a className="text-primary font-semibold">MD. GOLAM RABBI</a>
-        </h1>
+      {/* Bottom Bar */}
+      <div className="bg-[#111214] py-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs tracking-wide">
+            © {new Date().getFullYear()}{" "}
+            <span className="text-white font-medium">GAMEHUB</span>. All rights
+            reserved. Designed by{" "}
+            <span className="text-[#64FFDA] font-semibold cursor-pointer">
+              MD. GOLAM RABBI
+            </span>
+          </p>
 
-        <div className="space-x-4">
-          <a href="#" className="hover:text-primary">
-            FAQS
-          </a>
-          <a href="#" className="hover:text-primary">
-            Privacy
-          </a>
-          <a href="#" className="hover:text-primary">
-            Policy
-          </a>
-          <a href="#" className="hover:text-primary">
-            Support
-          </a>
+          <div className="flex space-x-6 text-xs font-medium uppercase tracking-widest">
+            {["Faqs", "Privacy", "Policy", "Support"].map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="hover:text-white transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
   );
-}
-
+};
 
 export default Footer;
