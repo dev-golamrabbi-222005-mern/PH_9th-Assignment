@@ -20,6 +20,7 @@ const Services = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-[#64FFDA] mb-3">
           Our Services
         </h1>
+        <div className="h-1.5 w-24 bg-[#64FFDA] mx-auto rounded-full mb-6"></div>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
           Empowering developers and gamers through innovation, visibility, and
           community.

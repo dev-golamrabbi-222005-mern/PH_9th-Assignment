@@ -13,7 +13,7 @@ const PopularGames = () => {
     .slice(0, 6);
 
   return (
-    <div className="my-8 md:my-12 lg:my-16 max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-16">
       <h1 className="text-center text-3xl font-bold mb-10 text-white tracking-tight">
         Popular Games
       </h1>
