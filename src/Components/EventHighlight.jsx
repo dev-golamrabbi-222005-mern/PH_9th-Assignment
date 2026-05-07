@@ -7,7 +7,7 @@ const EventHighlight = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="bg-sapphire-night rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden"
       >
@@ -35,6 +35,7 @@ const EventHighlight = () => {
           <motion.h2
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-4xl font-black text-white mt-4 mb-2"
           >
@@ -44,6 +45,7 @@ const EventHighlight = () => {
           <motion.p
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-white/80 max-w-md"
           >
@@ -52,6 +54,10 @@ const EventHighlight = () => {
           </motion.p>
 
           <motion.button
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="mt-6 bg-gray-500/80 text-[#64FFDA] px-8 py-3 rounded-xl font-bold hover:bg-secondary cursor-pointer transition-colors shadow-lg"
@@ -60,25 +66,29 @@ const EventHighlight = () => {
           </motion.button>
         </div>
 
-        {/* Countdown Timer Animation */}
+        {/* Countdown Timer */}
         <div className="mt-8 md:mt-0 flex gap-4 relative z-10 text-center">
           {["02", "14", "55"].map((num, i) => (
             <motion.div
               key={i}
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6 + i * 0.1, duration: 0.5 }}
-              whileHover={{ y: -10, borderColor: "rgba(100, 255, 218, 1)" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
+              whileHover={{
+                y: -10,
+                borderColor: "rgba(100, 255, 218, 1)",
+              }}
               className="bg-secondary/40 backdrop-blur-md p-4 rounded-xl min-w-[80px] border border-white/20 shadow-xl"
             >
               <motion.div
-                key={num}
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
                 className="text-2xl font-bold text-white"
               >
                 {num}
               </motion.div>
+
               <div className="text-[10px] text-[#64FFDA] uppercase font-bold">
                 {["Days", "Hours", "Min"][i]}
               </div>
