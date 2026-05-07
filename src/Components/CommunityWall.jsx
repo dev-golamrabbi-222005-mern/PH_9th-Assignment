@@ -8,7 +8,7 @@ const CommunityWall = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-[#5865F2]/10 border border-[#5865F2]/30 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden"
       >
@@ -20,7 +20,7 @@ const CommunityWall = () => {
           }}
           transition={{ duration: 8, repeat: Infinity }}
           className="absolute -top-24 -left-24 w-64 h-64 bg-[#5865F2] blur-[120px] pointer-events-none"
-        ></motion.div>
+        />
 
         {/* Floating Main Icon */}
         <motion.div
@@ -34,7 +34,8 @@ const CommunityWall = () => {
         <motion.h2
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           className="text-3xl md:text-5xl font-black text-white mb-4"
         >
           JOIN THE SQUAD
@@ -43,7 +44,8 @@ const CommunityWall = () => {
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.5 }}
           className="text-accent max-w-xl mx-auto mb-10 text-lg"
         >
           Get real-time updates, find teammates, and participate in exclusive
@@ -53,7 +55,8 @@ const CommunityWall = () => {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
           className="flex flex-wrap justify-center gap-4"
         >
           {/* Main Button */}
@@ -75,6 +78,7 @@ const CommunityWall = () => {
             >
               <FaTwitch size={24} />
             </motion.a>
+
             <motion.a
               whileHover={{ scale: 1.1, y: -5, color: "#64FFDA" }}
               whileTap={{ scale: 0.9 }}
